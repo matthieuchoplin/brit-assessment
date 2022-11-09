@@ -38,10 +38,6 @@ export default function ItemForm(props) {
         pricelist_id: pricelist_id,
         price: fields.price
       });
-    console.log(data.ok);
-    console.log(data.ok);
-    console.log(data.ok);
-    console.log(data.ok);
     if (data.ok) {
         flash(`Item ${fields.text} created!`, 'success');
         navigate(`/pricelist/${pricelist_id}`);

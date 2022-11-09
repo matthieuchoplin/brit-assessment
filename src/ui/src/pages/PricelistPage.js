@@ -7,6 +7,7 @@ import Stack from "react-bootstrap/Stack";
 import Button from "react-bootstrap/Button";
 import ItemForm from "../components/ItemForm";
 import Item from "../components/Item";
+import PricelistSummary from "../components/PricelistSummary";
 
 export default function PricelistPage() {
   const { id } = useParams();
@@ -14,6 +15,7 @@ export default function PricelistPage() {
   const [pricelist, setPricelist] = useState();
   const api = useApi();
   const [showModal, setShowModal] = useState(false);
+  const [showSummary, setShowSummary] = useState(false);
 
   const toggleModal = () => {
     setShowModal(true);
@@ -26,7 +28,7 @@ export default function PricelistPage() {
       const resp2 = await api.get(`/pricelists/${id}`);
       setPricelist(resp2.ok ? resp2.body : null);
     })();
-  }, [id, api, showModal]);
+  }, [id, api, showModal, showSummary]);
 
   return (
     <Body sidebar>
@@ -37,7 +39,14 @@ export default function PricelistPage() {
           {pricelist === null ?
             <p>Pricelist not found.</p>
           :
+              <div>
             <h1>{pricelist.title}</h1>
+            <PricelistSummary
+              isOpen={showSummary}
+              toggleModal={setShowSummary}
+              pricelist={pricelist}
+          />
+                </div>
           }
         </>
       }
@@ -52,6 +61,7 @@ export default function PricelistPage() {
               <Stack direction="horizontal" gap={4}>
                 <div>
                   <Button id="button-add-item" variant="primary" onClick={() => toggleModal(null)}>Add Item</Button>{' '}
+                  <Button id="button-compute-summary" variant="primary" onClick={() => setShowSummary(true)}>Summary</Button>{' '}
                   <>
                     {items === null ?
                        <p>Could not retrieve items.</p>
@@ -62,8 +72,8 @@ export default function PricelistPage() {
                         :
                             <table>
                               <tr>
-                                <th>Item</th>
-                                <th>Price</th>
+                                <th>Items</th>
+                                <th>Price (£)</th>
                               </tr>
                               {items.map(q => <Item key={q.id} item={q} items={items} setItems={() => setItems}/>)}
                             </table>

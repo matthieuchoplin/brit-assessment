@@ -12,6 +12,7 @@ class PricelistSchema(ma.SQLAlchemySchema):
         load_instance = True
 
     id = ma.auto_field(dump_only=True)
+    summary = ma.Integer(dump_only=True)
     items_url = ma.URLFor('items.pricelist_all', values={'id': '<id>'})
 
 
