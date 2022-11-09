@@ -1,0 +1,11 @@
+alchemical
+apifairy
+faker
+flask
+flask-cors
+flask-marshmallow
+flask-migrate
+gunicorn
+marshmallow-sqlalchemy
+pyjwt
+sqlalchemy-utils
