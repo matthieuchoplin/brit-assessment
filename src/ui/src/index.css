@@ -1,0 +1,114 @@
+.App {
+  padding: 0;
+}
+
+.Header {
+  border-bottom: 1px solid #ddd;
+}
+
+.Sidebar {
+  width: 120px;
+  margin: 5px;
+  position: sticky;
+  top: 62px;
+  align-self: flex-start;
+  align-items: start;
+}
+
+.Sidebar .nav-item {
+  width: 100%;
+}
+
+.Sidebar a {
+  color: #444;
+}
+
+.Sidebar a:hover {
+  background-color: #eee;
+}
+
+.Sidebar a:visited {
+  color: #444;
+}
+
+.Sidebar .nav-item .active {
+  background-color: #def;
+}
+
+.Content {
+  margin-top: 10px;
+}
+
+.Pricelist {
+  align-items: start;
+  padding-top: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.Pricelist:hover {
+  background-color: #f8f8f8;
+}
+
+.Pricelist a {
+  color: #14c;
+  text-decoration: none;
+}
+
+.Pricelist a:visited {
+  color: #14c;
+}
+
+.InputField {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.Sidebar a, .dropdown-item, .dropdown-item.active {
+  color: #444;
+}
+
+.Sidebar .nav-item .active, .dropdown-item.active {
+  background-color: #def;
+}
+
+.deleteButtonModalAction {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  overflow: hidden;
+}
+
+.add-new-pricelist {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+}
+.add-new-pricelist a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #2e7d32;
+  background-image: url('./icons/add.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  font-size: 0;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

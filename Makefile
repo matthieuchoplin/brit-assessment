@@ -29,3 +29,6 @@ install-deps:  ## install python requirements into your virtualenv
 update-deps:  ## update pinned requirements
 	pip-compile requirements.in --output-file requirements.txt --upgrade --upgrade-package 'click<8.0'
 	make install-deps
+
+run_front_end:
+	cd src/ui && npm install && npm start

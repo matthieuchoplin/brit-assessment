@@ -19,7 +19,7 @@ Below you can see the wireframes of the system and the basic requirements.
 2. Once the user is happy, pressing summary button will show the total cost of all items
 
 
-## Development
+## Backend development
 
 #### Setup
 * `python3 -m venv .venv`
@@ -38,3 +38,4 @@ Below you can see the wireframes of the system and the basic requirements.
  - `http://127.0.0.1:9000/api/pricelists/1`
  - `http://127.0.0.1:9000/api/pricelists/1/items`
 
+## Frontend development
