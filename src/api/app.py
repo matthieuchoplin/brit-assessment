@@ -17,7 +17,7 @@ cors = CORS()
 
 
 def create_app(config_class=Config):
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='../ui/build', static_url_path='/')
     app.config.from_object(config_class)
 
     if app.config['LOG_TO_STDOUT']:
