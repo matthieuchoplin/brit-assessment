@@ -2,7 +2,6 @@ import {useEffect, useState} from "react";
 import {useApi} from "../contexts/ApiProvider";
 import {Spinner} from "react-bootstrap";
 import Pricelist from "./Pricelist";
-import {Link} from "react-router-dom";
 
 export default function Pricelists() {
   const [showModal] = useState(false);
@@ -22,9 +21,6 @@ export default function Pricelists() {
 
   return (
     <>
-      <div className="add-new-pricelist">
-        <Link id="button-add-pricelist" to="/pricelist">Add a pricelist</Link>
-      </div>
       {pricelists === undefined ?
         <Spinner animation="border" />
       :

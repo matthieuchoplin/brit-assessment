@@ -18,6 +18,12 @@ class Pricelist(Updateable, db.Model):
     items = sqla_orm.relationship('Item', back_populates='pricelist',
                                       lazy='noload', cascade="all, delete-orphan")
 
+    @property
+    def summary(self):
+        result = db.session.execute(self.items_select())
+        items = [i[0] for i in result.fetchall()]
+        return sum(i.price for i in items)
+
     def items_select(self):
         return Item.select().where(sqla_orm.with_parent(self, Pricelist.items))
 

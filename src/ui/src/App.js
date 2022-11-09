@@ -15,10 +15,10 @@ export default function App() {
             <Routes>
               <Route path="*" element={
                   <Routes>
-                    <Route path="/" element={<PricelistPages />} />
+                    <Route path="/" element={<Navigate to="/pricelist/1" />} />
                     <Route path="/pricelists" element={<PricelistPages />} />
                     <Route path="/pricelist/:id" element={<PricelistPage />} />
-                    <Route path="*" element={<Navigate to="/" />} />
+                    <Route path="*" element={<Navigate to="/pricelist/1" />} />
                     <Route path="/item/:id" element={<ItemPage />} />
                   </Routes>
               } />
