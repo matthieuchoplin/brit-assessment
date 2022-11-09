@@ -25,7 +25,7 @@ Below you can see the wireframes of the system and the basic requirements.
 * `python3 -m venv .venv`
 * `source .venv/bin/activate`
 * `make install-deps`
-* `make migrate`
+* `make upgrade_db`
 * `make fake`
 
 #### Test

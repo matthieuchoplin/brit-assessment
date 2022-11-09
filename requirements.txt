@@ -65,6 +65,8 @@ packaging==21.3
     #   marshmallow
     #   marshmallow-sqlalchemy
     #   webargs
+psycopg2-binary==2.9.5
+    # via -r requirements.in
 pyjwt==2.6.0
     # via -r requirements.in
 pyparsing==3.0.9

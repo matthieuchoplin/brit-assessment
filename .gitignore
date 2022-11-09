@@ -4,3 +4,4 @@
 /src/tests/.pytest_cache/
 /src/db.sqlite
 /.pytest_cache/
+/logs/

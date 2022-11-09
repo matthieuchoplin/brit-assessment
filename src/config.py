@@ -10,11 +10,13 @@ def as_bool(value):
 
 class Config:
     # database options
-    ALCHEMICAL_DATABASE_URL = os.environ.get('DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'db.sqlite')
+    ALCHEMICAL_DATABASE_URL = os.environ.get('DATABASE_URL', '').replace(
+        'postgres://', 'postgresql://') or \
+                              'sqlite:///' + os.path.join(basedir, 'db.sqlite')
     ALCHEMICAL_ENGINE_OPTIONS = {'echo': as_bool(os.environ.get('SQL_ECHO'))}
 
     # security options
     SECRET_KEY = os.environ.get('SECRET_KEY', 'top-secret!')
     USE_CORS = as_bool(os.environ.get('USE_CORS') or 'yes')
     CORS_SUPPORTS_CREDENTIALS = True
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
