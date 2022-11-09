@@ -39,3 +39,4 @@ Below you can see the wireframes of the system and the basic requirements.
  - `http://127.0.0.1:9000/api/pricelists/1/items`
 
 ## Frontend development
+* `make run_front_end`
